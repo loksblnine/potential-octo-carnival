@@ -65,8 +65,8 @@ const callReducer = (state = initialState, action: { type: string; payload: any;
     case ACTIONS.CALLS.DELETE_CALL: {
       return {
         ...state,
-        items: state.items.filter((item: any) => item.id !== action.payload),
-        filteredItems: state.items.filter((item: any) => item.id !== action.payload),
+        items: state.items.filter((item: any) => item._id !== action.payload),
+        filteredItems: state.items.filter((item: any) => item._id !== action.payload),
       };
     }
     case ACTIONS.CALLS.SET_PAGE: {

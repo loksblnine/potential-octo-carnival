@@ -15,6 +15,6 @@ callsRouter
   .route('/:id')
   .get(callsController.getCallById)
   // .put(callsController.updateCallById)
-  // .delete(callsController.deleteCallById);
+  .delete(callsController.deleteCallById);
 
 export default callsRouter;

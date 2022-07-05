@@ -33,38 +33,24 @@ export const getCalls = async (request: Request, response: Response): Promise<vo
 export const getCallById = async (request: Request, response: Response): Promise<void> => {
   try {
     const id: string = request.params.id;
-    const customer: ICall | null = await call.findById(id);
-    response.status(200).json(customer);
+    const Call: ICall | null = await call.findById(id);
+    response.status(200).json(Call);
   } catch (e: any) {
     response.status(500).json("Something went wrong");
   }
 };
 
-//
-// export const deleteCallById = async (request: Request, response: Response): Promise<void> => {
-//   try {
-//     const id: string = request.params.id;
-//     const post = await Post.findOne({
-//       where: {
-//         id
-//       },
-//       raw: true
-//     });
-//     post.active = false;
-//     await Post.update({
-//         ...post
-//       },
-//       {
-//         where: {
-//           id
-//         }
-//       }
-//     );
-//     response.status(200).json(`Post #${id} was removed successfully`);
-//   } catch (e: any) {
-//     response.status(500).json("Something went wrong");
-//   }
-// };
+export const deleteCallById = async (request: Request, response: Response): Promise<void> => {
+  try {
+    const id: string = request.params.id;
+    await call.deleteOne({_id: id});
+    response.status(200).json(`Post #${id} was removed successfully`);
+  } catch (e: any) {
+    console.log(e);
+    response.status(500).json("Something went wrong");
+  }
+};
+
 // export const updateCallById = async (request: Request, response: Response): Promise<void> => {
 //   try {
 //     const id: string = request.params.id;

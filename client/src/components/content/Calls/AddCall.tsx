@@ -37,7 +37,7 @@ const AddCall = () => {
           <div className="modal-content">
             <form onSubmit={(event) => add(event)}>
               <div className="modal-header">
-                <h2 className="modal-title" id="exampleModalLabel">Add post information</h2>
+                <h2 className="modal-title" id="exampleModalLabel">Add call information</h2>
                 <button type="button" className="close" data-dismiss="modal">
                   <span aria-hidden="true">&times;</span>
                 </button>

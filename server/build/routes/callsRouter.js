@@ -33,6 +33,7 @@ callsRouter
     .get(callsController.getCalls);
 callsRouter
     .route('/:id')
-    .get(callsController.getCallById);
+    .get(callsController.getCallById)
+    .delete(callsController.deleteCallById);
 exports.default = callsRouter;
 //# sourceMappingURL=callsRouter.js.map

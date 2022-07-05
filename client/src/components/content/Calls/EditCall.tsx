@@ -37,7 +37,7 @@ const EditCall = (call: any) => {
           <div className="modal-content">
             <form onSubmit={(event) => edit(event)}>
               <div className="modal-header">
-                <h2 className="modal-title" id="exampleModalLabel">Add post information</h2>
+                <h2 className="modal-title" id="exampleModalLabel">Edit call information</h2>
                 <button type="button" className="close" data-dismiss="modal">
                   <span aria-hidden="true">&times;</span>
                 </button>
