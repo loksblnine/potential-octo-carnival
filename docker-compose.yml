@@ -1,0 +1,21 @@
+version: "2"
+services:
+  client:
+    build: ./client
+    ports:
+      - '80:80'
+    depends_on:
+      - server
+  server:
+    environment:
+      - MONGO_URI=mongodb://db:27017/octocarnival
+    restart: on-failure
+    build: ./server
+    ports:
+      - "8080:8080"
+    links:
+      - db
+  db:
+    image: mongo:5.0
+    ports:
+      - '27017:27017'
